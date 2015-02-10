@@ -1,0 +1,150 @@
+﻿<Window x:Class="G510.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:G510.App"
+        xmlns:cnverter="clr-namespace:G510.App.Converter"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <local:MainWindow_ViewModel />
+    </Window.DataContext>
+    
+    <Window.Resources>
+        <cnverter:MultiBinding_Converter x:Key="MultiBinding_Converter" />
+    </Window.Resources>
+    
+    <Grid>
+        <TabControl>
+           
+            <TabItem Header="G510">
+                <Grid Margin="5">
+                    <StackPanel>
+                        <Label Content="UserName:"></Label>
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition  Width="*"/>
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBox Grid.Column="0" HorizontalAlignment="Stretch" Text="{Binding UserToWatch, UpdateSourceTrigger=LostFocus}" >
+                                <TextBox.InputBindings>
+                                    <KeyBinding Key="Enter" Command="{Binding UserAction}" CommandParameter="UPDATETARGET" />
+                                </TextBox.InputBindings>
+                            </TextBox>
+                            <Button CommandParameter="UPDATETARGET" Grid.Column="1" Content="Update target" HorizontalAlignment="Left" Command="{Binding UserAction}" />
+                        </Grid>
+                    </StackPanel>
+
+                    <Button Command="{Binding UserAction}" CommandParameter="CHANGESTATE" Content="{Binding StateText, UpdateSourceTrigger=PropertyChanged}" Height="80" Width="250" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                </Grid>
+            </TabItem>
+            
+            <TabItem Header="Search Channels">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0" />
+                        <ColumnDefinition Width="0" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Orientation="Horizontal">
+                            <Label Content="Games" >
+                                <Label.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="LoadNext" Command="{Binding UserAction}" CommandParameter="GAMESLOADNEXT"/>
+                                    </ContextMenu>
+                                </Label.ContextMenu>
+                            </Label>
+                            <Label Content="ResultCount:" />
+                            <Label Content="{Binding GamesDisplay.Streams.Count, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Label Content="/"/>
+                            <Label Content="{Binding GamesDisplay.Total, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Label Content="{Binding SteamsStringAddition}" Margin="5,0"/>
+                        </StackPanel>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBox Text="{Binding SearchStringGames, UpdateSourceTrigger=PropertyChanged}" Width="{Binding ElementName=__games, Path=ActualWidth}" >
+                                <TextBox.InputBindings>
+                                    <KeyBinding Key="Enter" Command="{Binding UserAction}" CommandParameter="SEARCHGAMES" />
+                                </TextBox.InputBindings>
+                            </TextBox>
+                            <Button Grid.Column="1" Command="{Binding UserAction}" CommandParameter="SEARCHGAMES">
+                                <Path Height="20" Width="20" Stretch="UniformToFill" Fill="#FF000000" Data="F1 M 42.5,22C 49.4036,22 55,27.5964 55,34.5C 55,41.4036 49.4036,47 42.5,47C 40.1356,47 37.9245,46.3435 36,45.2426L 26.9749,54.2678C 25.8033,55.4393 23.9038,55.4393 22.7322,54.2678C 21.5607,53.0962 21.5607,51.1967 22.7322,50.0251L 31.7971,40.961C 30.6565,39.0755 30,36.8644 30,34.5C 30,27.5964 35.5964,22 42.5,22 Z M 42.5,26C 37.8056,26 34,29.8056 34,34.5C 34,39.1944 37.8056,43 42.5,43C 47.1944,43 51,39.1944 51,34.5C 51,29.8056 47.1944,26 42.5,26 Z "/>
+                            </Button>
+                        </Grid>
+                        <ListView Grid.Row="2" x:Name="__games" ScrollBar.Scroll="__games_Scroll"  ItemsSource="{Binding GamesDisplay.Games, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedGame, UpdateSourceTrigger=PropertyChanged}">
+                        </ListView>
+                    </Grid>
+                    <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch"  Margin="2,0" />
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Orientation="Horizontal">
+                            <Label Content="Streams" >
+                                <Label.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="LoadNext" Command="{Binding UserAction}" CommandParameter="STREAMSLOADNEXT"/>
+                                    </ContextMenu>
+                                </Label.ContextMenu>
+                            </Label>
+                            <Label Content="ResultCount:" />
+                            <Label Content="{Binding StreamsDisplay.Streams.Count, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Label Content="/"/>
+                            <Label Content="{Binding StreamsDisplay.Total, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Label Content="{Binding SteamsStringAddition}" Margin="5,0"/>
+                        </StackPanel>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBox Text="{Binding SearchStringStreams, UpdateSourceTrigger=PropertyChanged}" Width="{Binding ElementName=__streams, Path=ActualWidth}" >
+                                <TextBox.InputBindings>
+                                    <KeyBinding Key="Enter" Command="{Binding UserAction}" CommandParameter="SEARCHSTREAMS" />
+                                </TextBox.InputBindings>
+                            </TextBox>
+                            <Button Grid.Column="1" Command="{Binding UserAction}" CommandParameter="SEARCHSTREAMS">
+                                <Path Height="20" Width="20" Stretch="UniformToFill" Fill="#FF000000" Data="F1 M 42.5,22C 49.4036,22 55,27.5964 55,34.5C 55,41.4036 49.4036,47 42.5,47C 40.1356,47 37.9245,46.3435 36,45.2426L 26.9749,54.2678C 25.8033,55.4393 23.9038,55.4393 22.7322,54.2678C 21.5607,53.0962 21.5607,51.1967 22.7322,50.0251L 31.7971,40.961C 30.6565,39.0755 30,36.8644 30,34.5C 30,27.5964 35.5964,22 42.5,22 Z M 42.5,26C 37.8056,26 34,29.8056 34,34.5C 34,39.1944 37.8056,43 42.5,43C 47.1944,43 51,39.1944 51,34.5C 51,29.8056 47.1944,26 42.5,26 Z "/>
+                            </Button>
+                        </Grid>
+
+                        <DataGrid ScrollBar.Scroll="__streams_Scroll" AutoGenerateColumns="False" Grid.Row="2" CanUserAddRows="False" IsReadOnly="True" x:Name="__streams" ItemsSource="{Binding StreamsDisplay.Streams, UpdateSourceTrigger=PropertyChanged}">
+                            <DataGrid.RowStyle >
+                                <Style TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource {x:Type DataGridRow}}">
+                                    <Setter Property="ContextMenu" >
+                                        <Setter.Value>
+                                            <ContextMenu>
+                                                <MenuItem Header="View on G510" Command="{x:Static local:MainWindow_ViewModel.stUserAction}">
+                                                    <MenuItem.CommandParameter>
+                                                        <MultiBinding Converter="{StaticResource MultiBinding_Converter}" ConverterParameter="CHANGEG510STALKEDCHANNEL" >
+                                                            <Binding />
+                                                        </MultiBinding>
+                                                    </MenuItem.CommandParameter>
+                                                </MenuItem>
+                                            </ContextMenu>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </DataGrid.RowStyle>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="GameName" Binding="{Binding Game}" />
+                                <DataGridTextColumn Header="StreamerName" Binding="{Binding Channel.DisplayName}" />
+                                <DataGridTextColumn Header="StreamName" Binding="{Binding Channel.Status}" />
+                                <DataGridTextColumn Header="Viewers" Binding="{Binding Viewers}" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

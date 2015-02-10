@@ -1,0 +1,13 @@
+c:\users\robin\documents\visual studio 2013\Projects\G510.App.Widergabegeräte\G510.App.Widergabegeräte\bin\Debug\G510.App.Widergabegeräte.exe.config
+c:\users\robin\documents\visual studio 2013\Projects\G510.App.Widergabegeräte\G510.App.Widergabegeräte\obj\Debug\MainWindow.baml
+c:\users\robin\documents\visual studio 2013\Projects\G510.App.Widergabegeräte\G510.App.Widergabegeräte\obj\Debug\MainWindow.g.cs
+c:\users\robin\documents\visual studio 2013\Projects\G510.App.Widergabegeräte\G510.App.Widergabegeräte\obj\Debug\App.g.cs
+c:\users\robin\documents\visual studio 2013\Projects\G510.App.Widergabegeräte\G510.App.Widergabegeräte\obj\Debug\G510.App.Widergabegeräte_MarkupCompile.cache
+c:\users\robin\documents\visual studio 2013\Projects\G510.App.Widergabegeräte\G510.App.Widergabegeräte\obj\Debug\G510.App.Widergabegeräte.g.resources
+c:\users\robin\documents\visual studio 2013\Projects\G510.App.Widergabegeräte\G510.App.Widergabegeräte\obj\Debug\G510.App.Widergabegeräte.Properties.Resources.resources
+c:\users\robin\documents\visual studio 2013\Projects\G510.App.Widergabegeräte\G510.App.Widergabegeräte\obj\Debug\G510.App.Widergabegeräte.csproj.GenerateResource.Cache
+c:\users\robin\documents\visual studio 2013\Projects\G510.App.Widergabegeräte\G510.App.Widergabegeräte\bin\Debug\G510.App.Widergabegeräte.exe
+c:\users\robin\documents\visual studio 2013\Projects\G510.App.Widergabegeräte\G510.App.Widergabegeräte\bin\Debug\G510.App.Widergabegeräte.pdb
+c:\users\robin\documents\visual studio 2013\Projects\G510.App.Widergabegeräte\G510.App.Widergabegeräte\obj\Debug\G510.App.Widergabegeräte.exe
+c:\users\robin\documents\visual studio 2013\Projects\G510.App.Widergabegeräte\G510.App.Widergabegeräte\obj\Debug\G510.App.Widergabegeräte.pdb
+C:\Users\Robin\documents\visual studio 2013\Projects\G510.App.Widergabegeräte\G510.App.Widergabegeräte\obj\Debug\G510.App.Widergabegeräte.csprojResolveAssemblyReference.cache

@@ -1,0 +1,27 @@
+﻿Der Buildvorgang wurde am 08.02.2015 21:41:35 gestartet.
+     1>Projekt "C:\Users\Robin\Documents\Visual Studio 2013\Projects\G510.App.Twitch\GetLogiLCDDevice\GetLogiLCDDevice.vcxproj" auf Knoten "3", Build Ziel(e).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDLL /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\GetLogiLCDDevice.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib GetLogiLCDDevice.cpp
+         GetLogiLCDDevice.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDLL /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /analyze- /errorReport:prompt "C:\Users\Robin\AppData\Local\Temp\.NETFramework,Version=v4.5.AssemblyAttributes.cpp"
+         .NETFramework,Version=v4.5.AssemblyAttributes.cpp
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Debug\app.res" app.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Robin\Documents\Visual Studio 2013\Projects\G510.App.Twitch\Debug\GetLogiLCDDevice.dll" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Robin\Documents\Visual Studio 2013\Projects\G510.App.Twitch\Debug\GetLogiLCDDevice.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 /DLL Debug\app.res
+         Debug\AssemblyInfo.obj
+         Debug\GetLogiLCDDevice.obj
+         Debug\Stdafx.obj
+         "Debug\.NETFramework,Version=v4.5.AssemblyAttributes.obj"
+     1>GetLogiLCDDevice.obj : error LNK2028: Nicht aufgel÷stes Token (0A00040A) ""extern "C" long __stdcall RegCloseKey(struct HKEY__ *)" (?RegCloseKey@@$$J14YGJPAUHKEY__@@@Z)", auf das in Funktion ""void * __cdecl GetLogiLCDDevice::OpenDevice(void)" (?OpenDevice@GetLogiLCDDevice@@$$FYAPAXXZ)" verwiesen wird.
+     1>GetLogiLCDDevice.obj : error LNK2028: Nicht aufgel÷stes Token (0A00040D) ""extern "C" long __stdcall RegEnumKeyExW(struct HKEY__ *,unsigned long,wchar_t *,unsigned long *,unsigned long *,wchar_t *,unsigned long *,struct _FILETIME *)" (?RegEnumKeyExW@@$$J232YGJPAUHKEY__@@KPA_WPAK212PAU_FILETIME@@@Z)", auf das in Funktion ""void * __cdecl GetLogiLCDDevice::OpenDevice(void)" (?OpenDevice@GetLogiLCDDevice@@$$FYAPAXXZ)" verwiesen wird.
+     1>GetLogiLCDDevice.obj : error LNK2028: Nicht aufgel÷stes Token (0A00040E) ""extern "C" long __stdcall RegOpenKeyExW(struct HKEY__ *,wchar_t const *,unsigned long,unsigned long,struct HKEY__ * *)" (?RegOpenKeyExW@@$$J220YGJPAUHKEY__@@PB_WKKPAPAU1@@Z)", auf das in Funktion ""void * __cdecl GetLogiLCDDevice::OpenDevice(void)" (?OpenDevice@GetLogiLCDDevice@@$$FYAPAXXZ)" verwiesen wird.
+     1>GetLogiLCDDevice.obj : error LNK2019: Verweis auf nicht aufgel÷stes externes Symbol ""extern "C" long __stdcall RegOpenKeyExW(struct HKEY__ *,wchar_t const *,unsigned long,unsigned long,struct HKEY__ * *)" (?RegOpenKeyExW@@$$J220YGJPAUHKEY__@@PB_WKKPAPAU1@@Z)" in Funktion ""void * __cdecl GetLogiLCDDevice::OpenDevice(void)" (?OpenDevice@GetLogiLCDDevice@@$$FYAPAXXZ)".
+     1>GetLogiLCDDevice.obj : error LNK2019: Verweis auf nicht aufgel÷stes externes Symbol ""extern "C" long __stdcall RegEnumKeyExW(struct HKEY__ *,unsigned long,wchar_t *,unsigned long *,unsigned long *,wchar_t *,unsigned long *,struct _FILETIME *)" (?RegEnumKeyExW@@$$J232YGJPAUHKEY__@@KPA_WPAK212PAU_FILETIME@@@Z)" in Funktion ""void * __cdecl GetLogiLCDDevice::OpenDevice(void)" (?OpenDevice@GetLogiLCDDevice@@$$FYAPAXXZ)".
+     1>GetLogiLCDDevice.obj : error LNK2019: Verweis auf nicht aufgel÷stes externes Symbol ""extern "C" long __stdcall RegCloseKey(struct HKEY__ *)" (?RegCloseKey@@$$J14YGJPAUHKEY__@@@Z)" in Funktion ""void * __cdecl GetLogiLCDDevice::OpenDevice(void)" (?OpenDevice@GetLogiLCDDevice@@$$FYAPAXXZ)".
+     1>C:\Users\Robin\Documents\Visual Studio 2013\Projects\G510.App.Twitch\Debug\GetLogiLCDDevice.dll : fatal error LNK1120: 6 nicht aufgel÷ste Externe
+     1>Die Erstellung des Projekts "C:\Users\Robin\Documents\Visual Studio 2013\Projects\G510.App.Twitch\GetLogiLCDDevice\GetLogiLCDDevice.vcxproj" ist abgeschlossen, Build Ziel(e) -- FEHLER.
+
+Fehler beim Buildvorgang.
+
+Verstrichene Zeit 00:00:00.90
